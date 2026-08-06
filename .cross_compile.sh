@@ -4,7 +4,7 @@
  # @Date: 2022-10-20 02:19:06
  # @LastEditors: Vincent Yang
  # @LastEditTime: 2024-03-20 16:52:40
- # @FilePath: /DeepLX/.cross_compile.sh
+ # @FilePath: /DLX/.cross_compile.sh
  # @Telegram: https://t.me/missuo
  # 
  # Copyright © 2022 by Vincent, All Rights Reserved. 

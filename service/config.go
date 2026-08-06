@@ -1,16 +1,16 @@
 /*
  * @Author: Vincent Yang
  * @Date: 2024-04-23 00:39:03
- * @LastEditors: Vincent Yang
- * @LastEditTime: 2024-09-17 19:34:32
- * @FilePath: /DeepLX/config.go
+ * @LastEditors: Jason Lyu
+ * @LastEditTime: 2025-04-08 13:45:00
+ * @FilePath: /DLX/service/config.go
  * @Telegram: https://t.me/missuo
  * @GitHub: https://github.com/missuo
  *
  * Copyright © 2024 by Vincent, All Rights Reserved.
  */
 
-package main
+package service
 
 import (
 	"flag"
@@ -26,7 +26,7 @@ type Config struct {
 	Proxy     string
 }
 
-func initConfig() *Config {
+func InitConfig() *Config {
 	cfg := &Config{
 		IP:   "0.0.0.0",
 		Port: 1188,

@@ -1,10 +1,13 @@
-FROM golang:1.23.1 AS builder
-WORKDIR /go/src/github.com/OwO-Network/DeepLX
+FROM golang:1.25 AS builder
+WORKDIR /go/src/github.com/OwO-Network/DLX
 COPY . .
 RUN go get -d -v ./
 RUN CGO_ENABLED=0 go build -a -installsuffix cgo -o deeplx .
 
 FROM alpine:latest
 WORKDIR /app
-COPY --from=builder /go/src/github.com/OwO-Network/DeepLX/deeplx /app/deeplx
-CMD ["/app/deeplx"]
+RUN addgroup -S deeplx && adduser -h /app -G deeplx -SH deeplx
+USER deeplx:deeplx
+COPY --from=builder --chown=deeplx:deeplx /go/src/github.com/OwO-Network/DLX/deeplx /app/deeplx
+EXPOSE 1188
+ENTRYPOINT ["/app/deeplx"]
